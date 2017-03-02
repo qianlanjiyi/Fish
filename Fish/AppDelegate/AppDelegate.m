@@ -7,7 +7,12 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "BaseTabBarController.h"
+#import "BaseNavigationController.h"
+#import "HomePageViewController.h"
+#import "PodViewController.h"
+#import "NewsViewController.h"
+#import "SetViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,16 +25,32 @@
     // Override point for customization after application launch.
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
-    //login
-    ViewController *loginVC = [[ViewController alloc] init];
-    self.window.rootViewController = loginVC;
+    self.window.rootViewController = [self createTabBarVC];
+    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    
-    
     return YES;
 }
 
+- (UIViewController *)createTabBarVC {
+    HomePageViewController *homePageVC = [[HomePageViewController alloc] init];
+    homePageVC.title = @"主页";
+    BaseNavigationController *homePageNV = [[BaseNavigationController alloc] initWithRootViewController:homePageVC];
+    PodViewController *podVC = [[PodViewController alloc] init];
+    podVC.title = @"塘口";
+    BaseNavigationController *podNV = [[BaseNavigationController alloc] initWithRootViewController:podVC];
+    
+    NewsViewController *newsVC = [[NewsViewController alloc] init];
+    newsVC.title = @"资讯";
+    BaseNavigationController *newsNV = [[BaseNavigationController alloc] initWithRootViewController:newsVC];
+    
+    SetViewController *setVC = [[SetViewController alloc] init];
+    setVC.title = @"设置";
+    BaseNavigationController *setNV = [[BaseNavigationController alloc] initWithRootViewController:setVC];
+    
+    BaseTabBarController *baseVC = [[BaseTabBarController alloc] init];
+    baseVC.viewControllers = @[homePageNV, podNV, newsNV, setNV];
+    return baseVC;
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
