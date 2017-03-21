@@ -15,20 +15,7 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="366" height="318"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZZ-7B-VHg">
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="N4W-O9-u0J"/>
-                        <constraint firstAttribute="width" constant="200" id="nI9-Me-vUK"/>
-                    </constraints>
-                    <state key="normal" title="Button"/>
-                </button>
-            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <constraints>
-                <constraint firstItem="rZZ-7B-VHg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="HXb-oF-f3H"/>
-                <constraint firstItem="rZZ-7B-VHg" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="rm5-Kr-QaU"/>
-            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="21" y="227"/>
         </view>
